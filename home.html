@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpeg'); /* Ganti dengan path gambar Anda */
+      background-size: cover; /* Menutupi seluruh halaman */
+      background-position: center; /* Posisi gambar di tengah */
+      background-attachment: fixed; /* Membuat gambar tetap saat menggulir */
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparansi latar belakang header */
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 25px;
+      text-align: center;
+      color: black;
+    }
+
+    .welcome-message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      margin: 20px 0;
+    }
+
+    .logout-btn {
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Selamat Datang di Halaman Utama</h1>
+  </header>
+
+   <main>
+    <div class="welcome-message">
+      <p>Anda berhasil login!</p>
+      <p>Selamat datang, <strong>TUAN</strong>!</p>
+    </div>
+
+    <!-- Tombol untuk menuju halaman2.html -->
+    <a href="halaman2.html" class="btn-next">Ke Halaman Selanjutnya</a>
+
+  </main>
+
+  <script>
+    function logout() {
+      window.location.href = "login.html"; // Ganti dengan URL halaman login
+    }
+  </script>
+
+</body>
+</html>
