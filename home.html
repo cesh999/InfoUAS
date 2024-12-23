@@ -1,84 +1,186 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url('background.jpeg'); /* Ganti dengan path gambar Anda */
-      background-size: cover; /* Menutupi seluruh halaman */
-      background-position: center; /* Posisi gambar di tengah */
-      background-attachment: fixed; /* Membuat gambar tetap saat menggulir */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sekolah</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("latar.png");
+            background-size: cover; /* Mengatur gambar agar menutupi seluruh layar */
+            background-position: center; /* Memposisikan gambar di tengah */
+            background-attachment: fixed; /* Menjaga gambar tetap di tempat saat scroll */
+        }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.5); /* Transparansi latar belakang header */
-      color: black;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background-color: rgba(76, 175, 80, 0.1); /* Warna hijau dengan transparansi */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    main {
-      padding: 25px;
-      text-align: center;
-      color: black;
-    }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Warna hitam dengan transparansi */
+            overflow: hidden;
+        }
 
-    .welcome-message {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-    .image-container {
-      margin: 20px 0;
-    }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-    .logout-btn {
-      padding: 10px 20px;
-      background-color: #f44336;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* Warna putih dengan transparansi */
+        }
 
-    .logout-btn:hover {
-      background-color: #d32f2f;
-    }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-  </style>
+        .gallery img {
+            width: calc(25% - 10px);
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 2px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #ff8504ae;
+            color: black;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Warna hitam dengan transparansi */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>KELAS VIII</h1>
+        <p>Kenangan dan Informasi Sekolah</p>
+    </header>
+    
+    <nav>
+        <a href="#kenangan">Foto Kenangan</a>
+        <a href="#guru-murid">Daftar Guru dan Murid</a>
+    </nav>
 
-  <header>
-    <h1>Selamat Datang di Halaman Utama</h1>
-  </header>
+    <section id="kenangan">
+        <h2>Foto Kenangan</h2>
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Foto Kenangan 1">
+            <img src="foto2.jpg" alt="Foto Kenangan 2">
+            <img src="foto3.jpg" alt="Foto Kenangan 3">
+            <img src="foto4.jpg" alt="Foto Kenangan 4">
+        </div>
+    </section>
 
-   <main>
-    <div class="welcome-message">
-      <p>Anda berhasil login!</p>
-      <p>Selamat datang, <strong>TUAN</strong>!</p>
-    </div>
+    <section id="guru-murid">
+        <h2>Daftar Guru dan Murid</h2>
 
-    <!-- Tombol untuk menuju halaman2.html -->
-    <a href="halaman2.html" class="btn-next">Ke Halaman Selanjutnya</a>
+        <h3>Guru</h3>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Mapel</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Bapak Rajali</td>
+                <td>Matematika</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ibu Fitria</td>
+                <td>Bahasa Indonesia</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bapak Mardi</td>
+                <td>Bahasa Arab</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Bapak Musta'in</td>
+                <td>Akidah Akhlak/Al-Qur'an Hadist</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ibu Erma</td>
+                <td>Bahasa Inggris(1)/IPA/IPS</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Ibu Halimah</td>
+                <td>Fikih/Tartil/Tahfiz</td>
+            </tr>
+        </table>
 
-  </main>
+        <h3>Murid</h3>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Ahmad Anshari</td>
+                <td>VIII</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Hafizah 🥶🥶</td>
+                <td>VIII</td>
+            </tr>
+        </table>
+    </section>
 
-  <script>
-    function logout() {
-      window.location.href = "login.html"; // Ganti dengan URL halaman login
-    }
-  </script>
+    <section id="upload">
+        <h2>Upload Foto Kenangan</h2>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="fileInput">Pilih foto:</label>
+            <input type="file" name="uploadedFile" id="fileInput" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    </section>
 
+    <footer>
+        <p>website info kelas VIII</p>
+    </footer>
 </body>
 </html>
