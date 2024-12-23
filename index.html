@@ -6,15 +6,15 @@
     <title>Website Sekolah</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url("latar.png");
-            background-size: cover; /* Mengatur gambar agar menutupi seluruh layar */
-            background-position: center; /* Memposisikan gambar di tengah */
-            background-attachment: fixed; /* Menjaga gambar tetap di tempat saat scroll */
-        }
+         body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("latar.png");
+        background-size: cover; /* Mengatur gambar agar menutupi seluruh layar */
+        background-position: center; /* Memposisikan gambar di tengah */
+        background-attachment: fixed; /* Menjaga gambar tetap di tempat saat scroll */
+    }
 
         header {
             background-color: rgba(76, 175, 80, 0.1); /* Warna hijau dengan transparansi */
@@ -46,6 +46,9 @@
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.2); /* Warna putih dengan transparansi */
         }
+        /* Mengatur hanya kolom dalam tabel data guru dan murid yang tidak transparan */
+    #guru-murid table th, #guru-murid table td {
+        background-color: rgba(0,0,0,0.541); /* Memberikan latar belakang solid hanya di bagian data guru dan murid */
 
         .gallery {
             display: flex;
