@@ -1,2 +1,0 @@
-# InfoUAS
-menyediakan berbagai informasi
