@@ -48,16 +48,42 @@
         }
 
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    padding: 0 20px;
+}
 
-        .gallery img {
-            width: calc(25% - 10px);
-            border: 2px solid black;
-            border-radius: 5px;
-        }
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.photo img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 10px 10px 0 0;
+}
+
+.photo img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.photo p {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 0 0 10px 10px;
+}
 
         table {
             width: 100%;
@@ -128,18 +154,39 @@
         <a href="#guru-murid">Daftar Guru dan Murid</a>
     </nav>
 
-    <section id="kenangan">
-        <h2>Foto aib<h2>
-            <div class="gallery">
+<section id="kenangan">
+    <h2>Foto Aib</h2>
+    <div class="gallery">
+        <div class="photo">
             <img src="foto1.jpg" alt="Foto Kenangan 1">
-            <img src="foto2.jpg" alt="Foto Kenangan 2">
-            <img src="foto3.jpg" alt="Foto Kenangan 3">
-            <img src="foto4.jpg" alt="Foto Kenangan 4">
-            <img src="foto5.jpg" alt="Foto Kenangan 5">
-            <img src="foto6.jpg" alt="Foto Kenangan 6">
-            <img src="foto7.jpg" alt="Foto Kenangan 7">
+            <p>Judul Foto 1</p>
         </div>
-    </section>
+        <div class="photo">
+            <img src="foto2.jpg" alt="Foto Kenangan 2">
+            <p>Judul Foto 2</p>
+        </div>
+        <div class="photo">
+            <img src="foto3.jpg" alt="Foto Kenangan 3">
+            <p>Judul Foto 3</p>
+        </div>
+        <div class="photo">
+            <img src="foto4.jpg" alt="Foto Kenangan 4">
+            <p>Judul Foto 4</p>
+                    <div class="photo">
+            <img src="foto5.jpg" alt="Foto Kenangan 5">
+            <p>Judul Foto 5</p>
+        </div>
+        <div class="photo">
+            <img src="foto6.jpg" alt="Foto Kenangan 6">
+            <p>Judul Foto 6</p>
+        </div>
+        <div class="photo">
+            <img src="foto7.jpg" alt="Foto Kenangan 7">
+            <p>Judul Foto 7</p>
+        </div>
+        </div>
+    </div>
+</section>
 
     <section id="guru-murid">
         <h2>Daftar Guru dan Murid</h2>
