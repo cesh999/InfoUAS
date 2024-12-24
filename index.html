@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -105,9 +105,19 @@
             width: 100%;
             bottom: 0;
         }
+        #fishCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Agar tidak menghalangi elemen lainnya */
+    z-index: -1; /* Letakkan di belakang elemen lain */
+}
     </style>
 </head>
 <body>
+  <canvas id="fishCanvas"></canvas>
     <header>
         <h1>KELAS VIII</h1>
         <p>Kenangan dan Informasi Sekolah</p>
@@ -198,5 +208,85 @@
     <footer>
         <p>Website Info Kelas VIII</p>
     </footer>
+    <script>
+    const canvas = document.getElementById("fishCanvas");
+    const ctx = canvas.getContext("2d");
+    let fishArray = [];
+    let canvasWidth = window.innerWidth;
+    let canvasHeight = window.innerHeight;
+
+    // Set ukuran canvas
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    // Resize canvas saat ukuran jendela berubah
+    window.addEventListener("resize", () => {
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+    });
+
+    // Kelas untuk ikan
+    class Fish {
+        constructor(x, y, speedX, speedY, size, color) {
+            this.x = x;
+            this.y = y;
+            this.speedX = speedX;
+            this.speedY = speedY;
+            this.size = size;
+            this.color = color;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.ellipse(this.x, this.y, this.size, this.size / 2, 0, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(this.x - this.size, this.y);
+            ctx.lineTo(this.x - this.size * 1.5, this.y - this.size / 2);
+            ctx.lineTo(this.x - this.size * 1.5, this.y + this.size / 2);
+            ctx.closePath();
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            // Ubah arah jika ikan keluar layar
+            if (this.x > canvasWidth || this.x < 0) this.speedX *= -1;
+            if (this.y > canvasHeight || this.y < 0) this.speedY *= -1;
+        }
+    }
+
+    // Buat ikan secara acak
+    function createFish() {
+        for (let i = 0; i < 10; i++) {
+            const size = Math.random() * 20 + 10;
+            const x = Math.random() * canvasWidth;
+            const y = Math.random() * canvasHeight;
+            const speedX = Math.random() * 2 - 1;
+            const speedY = Math.random() * 2 - 1;
+            const color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            fishArray.push(new Fish(x, y, speedX, speedY, size, color));
+        }
+    }
+
+    // Animasi
+    function animate() {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        fishArray.forEach(fish => {
+            fish.update();
+            fish.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+
+    createFish();
+    animate();
+</script>
 </body>
 </html>
