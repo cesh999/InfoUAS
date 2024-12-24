@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin: 20px auto;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masukkan Username</h1>
+    <form id="dashboardForm">
+        <input type="text" id="username" placeholder="Masukkan username Anda" required>
+        <button type="submit">Masuk</button>
+    </form>
+    <p class="error" id="errorMsg" style="display: none;">Username tidak valid!</p>
+
+    <script>
+        // Daftar username yang valid dan dashboard yang terkait
+        const userDashboards = {
+            "yahya": "dashboard1.html",
+            "user2": "dashboard2.html",
+            "user3": "dashboard3.html",
+            "user4": "dashboard4.html",
+            "user5": "dashboard5.html",
+            "user6": "dashboard6.html",
+            "user7": "dashboard7.html",
+            "user8": "dashboard8.html",
+            "user9": "dashboard9.html",
+            "user10": "dashboard10.html",
+            "user11": "dashboard11.html",
+            "user12": "dashboard12.html",
+            "user13": "dashboard13.html"
+        };
+
+        const form = document.getElementById("dashboardForm");
+        const usernameInput = document.getElementById("username");
+        const errorMsg = document.getElementById("errorMsg");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const username = usernameInput.value.trim();
+
+            // Periksa apakah username valid
+            if (userDashboards[username]) {
+                // Redirect ke dashboard yang sesuai
+                window.location.href = userDashboards[username];
+            } else {
+                // Tampilkan pesan error
+                errorMsg.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
